@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import pages.HomePage;
+import support.Generico;
 
 public class HomeSteps {
     WebDriver driver;
@@ -32,11 +33,12 @@ public class HomeSteps {
 
     @Quando("printar a evidencia")
     public void printarAEvidencia() throws IOException {
-        HomePage homePage = new HomePage(driver);
-        homePage.PrintaEvidencia();
+        Generico generico = new Generico(driver);
+        generico.PrintaEvidencia();
     }
 
     @Entao("fechar o browser")
     public void fecharOBrowser() {
+        driver.quit();
     }
 }

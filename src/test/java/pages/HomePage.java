@@ -5,17 +5,22 @@ import org.openqa.selenium.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 public class HomePage {
     WebDriver driver;
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void PrintaEvidencia() throws IOException {
-        driver.findElement(By.xpath("//img[@alt='Selenium Online Training']"));
-        TakesScreenshot takeShot = (TakesScreenshot)driver;
-        File file = takeShot.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file, new File("src/Evidencias/Image.png"));
-    }
+
+//    public void PrintaEvidencia() throws IOException {
+//        Date currentdate = new Date();
+//        String screenShotFileName = currentdate.toString().replace(" ","-").replace(":","-");
+////        driver.findElement(By.xpath("//img[@alt='Selenium Online Training']"));
+//        TakesScreenshot takeShot = (TakesScreenshot)driver;
+//        File file = takeShot.getScreenshotAs(OutputType.FILE);
+//        FileUtils.copyFile(file, new File("src/Evidencias/"+screenShotFileName+".png"));
+//    }
 }
